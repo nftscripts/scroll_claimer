@@ -95,7 +95,8 @@ class Account(Utils):
             'value': 0,
             'nonce': await self.web3.eth.get_transaction_count(self.wallet_address),
             'from': self.wallet_address,
-            'gasPrice': await self.web3.eth.gas_price
+            'maxFeePerGas': int(await self.web3.eth.gas_price * 4),
+            'maxPriorityFeePerGas': await self.web3.eth.gas_price
         })
         tx_hash = await self.sign_transaction(tx)
         confirmed = await self.wait_until_tx_finished(tx_hash)
