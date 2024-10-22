@@ -1,0 +1,5 @@
+SCROLL_RPC = 'https://1rpc.io/scroll'
+
+PAUSE_BETWEEN_WALLETS = [10, 20]
+
+TRANSFER_AFTER_CLAIM = False
