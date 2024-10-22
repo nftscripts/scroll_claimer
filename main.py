@@ -1,4 +1,6 @@
-from asyncio import run, gather, create_task, sleep, set_event_loop_policy, WindowsSelectorEventLoopPolicy
+from asyncio import run, gather, create_task, sleep, set_event_loop_policy
+import asyncio
+
 import sys
 import random
 import logging
@@ -11,7 +13,7 @@ from src.claimer.claimer import Scroll
 from src.utils.user.account import Account
 
 if sys.platform == 'win32':
-    set_event_loop_policy(WindowsSelectorEventLoopPolicy())
+    set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
 logging.getLogger("asyncio").setLevel(logging.CRITICAL)
 
