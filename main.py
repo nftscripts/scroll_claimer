@@ -31,7 +31,7 @@ async def process_task(private_key: str, proxy: str) -> None:
 
         account = Account(
             private_key=private_key,
-            proxy=proxy
+            proxy=f'http://{proxy}' if proxy else None
         )
         await account.transfer(recipient=recipient)
 
